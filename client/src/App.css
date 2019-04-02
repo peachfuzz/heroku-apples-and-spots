@@ -286,6 +286,10 @@ tr:nth-child(even) {
   margin-top: 10px;
 }
 
+.bp3-divider {
+  width: 95%;
+}
+
 .passwords {
   list-style: none;
   padding: 0;
