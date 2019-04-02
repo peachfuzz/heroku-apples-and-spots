@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Divider } from "@blueprintjs/core";
+import { Divider, Icon } from "@blueprintjs/core";
 
 class Albums extends Component {
   render() {
@@ -14,11 +14,29 @@ class Albums extends Component {
               target="_blank"
               href={album.external_urls.spotify}
             >
-              <img
-                src={album.images[1].url}
-                className="cover-art-image"
-                alt={album.name + "'s album art"}
-              />
+              {album.images[1] ? (
+                <img
+                  src={album.images[1].url}
+                  className="cover-art-image"
+                  alt={album.name + "'s album art"}
+                />
+              ) : album.images[0] ? (
+                <img
+                  src={album.images[0].url}
+                  className="cover-art-image"
+                  alt={album.name + "'s album art"}
+                />
+              ) : (
+                <Icon
+                  icon="floppy-disk"
+                  className="cover-art-image"
+                  alt={
+                    album.name +
+                    " doesn't have any album art, using a default image"
+                  }
+                  iconSize={100}
+                />
+              )}
             </a>
           </div>
           <div className="tracklist-name">
