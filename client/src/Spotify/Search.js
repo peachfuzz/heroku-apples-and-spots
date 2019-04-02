@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { Tabs, Tab, InputGroup, NonIdealState } from "@blueprintjs/core";
 import Albums from "./Results/Albums";
 import Artists from "./Results/Artists";
@@ -34,35 +33,18 @@ class Search extends Component {
   }
   searchTrack(q) {
     if (q !== "") {
-      var url =
-        "https://api.spotify.com/v1/search?q=" +
-        q +
-        "&type=album,artist,playlist,track&limit=10";
-      axios
-        .get(url, {
-          headers: {
-            Authorization: `Bearer ${this.props.token}`
-          }
-        })
-        .then(response => {
-          var data = response.data;
-          this.setState({
-            albums: data.albums.items,
-            artists: data.artists.items,
-            playlists: data.playlists.items,
-            tracks: data.tracks.items
-          });
-          var loc = window.location.href; // adding query string, idk if it's even worth it
-          if (loc.indexOf("&search=") > -1) {
-            window.location.href =
-              window.location.href.substring(
-                0,
-                window.location.href.indexOf("&search=") + 8 //replaces the old query string
-              ) + q;
-          } else {
-            window.location.href = window.location.href + "&search=" + q; //adds new query string
-          }
-        })
+      fetch("/api/spotify/search?q=" + q)
+        .then(res => res.json())
+        .then(results =>
+          this.setState({ results: results }, () =>
+            this.setState({
+              albums: results.albums.items,
+              artists: results.artists.items,
+              playlists: results.playlists.items,
+              tracks: results.tracks.items
+            })
+          )
+        )
         .catch(error => {
           console.log("ERROR!");
           this.setState({
