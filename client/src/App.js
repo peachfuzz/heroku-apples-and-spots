@@ -57,7 +57,8 @@ class App extends Component {
     const CLIENT_ID = "2b99e55f6fc04b1c82063242856ab33f"; // Your client id
     // const redirect_uri = "https://peachfuzz.dev/StreamLinks"; // to use once we get regular router working
     // if you want to use Client Credentials Flow, secret and backend is required
-    const redirect_uri = window.location.protocol + "//" + window.location.host;
+    const redirect_uri =
+      window.location.protocol + "//" + window.location.host + "/";
     const url =
       "https://accounts.spotify.com/authorize" +
       "?response_type=token" +
