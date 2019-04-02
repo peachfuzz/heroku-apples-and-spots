@@ -6,7 +6,7 @@ class Artists extends Component {
     return this.props.artists.map(artist => {
       counter++;
       return (
-        <div className="results w-100" key={counter}>
+        <div className="bp3-vertical results w-100" key={counter}>
           <div className="cover-art-image">
             <a
               rel="noopener noreferrer"

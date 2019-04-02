@@ -7,7 +7,7 @@ class Playlists extends Component {
       counter++;
       // var artists = playlist.artists[0...n]; // if we ever want to do multiple artists
       return (
-        <div className="results w-100" key={counter}>
+        <div className="bp3-vertical results w-100" key={counter}>
           <div className="cover-art-image">
             <a
               rel="noopener noreferrer"
