@@ -10,10 +10,10 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <div className="App bp3-dark">
-        <div className="stream-links top">
-          <header className="App-header">
-            <div className="content">
+      <div className="App bp3-dark bp3-text-large w-100">
+        <div className="content">
+          <div className="inner-content">
+            <div className="stream-links top">
               <H1>Stream links</H1>
               <IoIosMusicalNotes
                 alt="Music note"
@@ -28,7 +28,7 @@ class App extends Component {
               <br />
               <Search />
             </div>
-          </header>
+          </div>
         </div>
       </div>
     );
