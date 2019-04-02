@@ -67,10 +67,6 @@ app.get("/api/passwords", (req, res) => {
   console.log(`Sent ${count} passwords`);
 });
 
-// app.get("/api/spotify/search", (req, res) => {
-
-// });
-
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get("*", (req, res) => {
