@@ -1,12 +1,289 @@
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
-  font-family: "Courier New", monospace;
+  background-color: #282c34;
+  color: #ffffff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  max-width: 700px;
+  min-height: 80vh;
+  position: relative;
+  margin: auto;
+  word-break: break-word;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 20vmin;
+}
+
+.peach {
+  height: 40vmin;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-footer {
+  position: absolute;
+  height: 9rem;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+a {
+  color: #ffdab9 !important;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  text-align: left;
+}
+
+.content {
+  padding: 20px;
+  margin-bottom: 7rem; /*footer height*/
+  position: relative;
+  min-height: 400px;
+  box-sizing: border-box; /*height includes padding*/
+}
+
+.top {
+  margin-top: 10px;
+}
+
+.euclid,
+.euclid-table {
+  display: block;
+}
+
+.euclid-table {
+  padding: 20px;
+}
+
+#euclidTable,
+.euclidTable {
+  word-break: normal;
+  max-width: 210px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small-text {
+  font-size: 9pt;
+}
+
+.social-media-links {
+  display: table;
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+.social-media-links li {
+  display: inline-block;
+  zoom: 1;
+}
+
+.icon-github,
+.icon-instagram,
+.icon-linkedin {
+  display: table-cell;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.me {
+  border-radius: 50%;
+  max-width: 240px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tracklist-col {
+  height: 4.56em;
+}
+
+.tracklist-col.name {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 0;
+  word-break: normal;
+  padding-right: 1px;
+  margin-right: -1px;
+}
+
+.tracklist-top-align {
+  margin-top: 0.7em;
+}
+
+.tracklist-name {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.015em;
+  color: #fff;
+  display: inline-block;
+  width: 520px;
+  overflow: hidden;
+}
+
+.ellipsis-one-line {
+  justify-content: flex-start;
+  white-space: pre-wrap;
+  margin-right: -1px;
+  word-wrap: normal;
+  text-align: left;
+}
+
+.explicit-label {
+  margin-right: 0.67em;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.015em;
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: hsla(0, 0%, 100%, 0.6);
+  color: #000;
+  border-radius: 2px;
+  padding: 0 0.3em;
+}
+
+.album-art {
+  display: left;
+}
+
+.track-name-wrapper,
+.second-line {
+  padding: 20px;
+}
+.cover-art-image {
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.3, 0, 0.4, 1);
+  transition-timing-function: cubic-bezier(0.3, 0, 0.4, 1);
+  top: 0;
+  background-size: cover;
+  background-position: 50%;
+  width: 140px;
+  vertical-align: top;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
+.next-line {
+  height: 100px;
+  word-break: normal;
+}
+
+.results {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 699px) {
+  .cover-art-image {
+    padding-right: 0;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tracklist-name {
+    justify-content: center;
+  }
+
+  .ellipsis-one-line {
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+  }
+}
+
+.w-100 {
   width: 100%;
 }
 
-h1 {
-  font-weight: normal;
-  font-size: 42px;
+.w-300px {
+  width: 300px;
+}
+
+.center,
+.bp3-tab-list {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  margin-top: 10px;
+}
+
+.bp3-divider {
+  width: 100%;
 }
 
 .passwords {
@@ -23,10 +300,11 @@ h1 {
   background-color: #fff;
   padding: 10px 25px;
 }
+
 .more:hover {
-  background-color: #FDD836;
-}
-.more:active {
-  background-color: #FFEFA9;
+  background-color: #fdd836;
 }
 
+.more:active {
+  background-color: #ffefa9;
+}
