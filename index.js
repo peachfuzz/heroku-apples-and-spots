@@ -31,6 +31,7 @@ request.post(authOptions, function(error, response, body) {
   }
 });
 
+// Put all API endpoints under '/api'
 app.get("/api/spotify/search", function(req, res) {
   console.log(req.query.q);
   var options = {
@@ -44,27 +45,23 @@ app.get("/api/spotify/search", function(req, res) {
     },
     json: true
   };
-  console.log(options.url);
   request.get(options, (error, response, body) => {
-    console.log(body);
     res.json(body);
   });
 });
 
-// const redirect_url = ""
-// Put all API endpoints under '/api'
-app.get("/api/passwords", (req, res) => {
-  const count = 5;
-
-  // Generate some passwords
-  const passwords = Array.from(Array(count).keys()).map(i =>
-    generatePassword(12, false)
-  );
-
-  // Return them as json
-  res.json(passwords);
-
-  console.log(`Sent ${count} passwords`);
+app.get("/api/spotify/tracks", function(req, res) {
+  console.log(req.query.id);
+  var options = {
+    url: "https://api.spotify.com/v1/tracks/" + req.query.id,
+    headers: {
+      Authorization: "Bearer " + token
+    },
+    json: true
+  };
+  request.get(options, (error, response, body) => {
+    res.json(body);
+  });
 });
 
 // The "catchall" handler: for any request that doesn't
@@ -76,4 +73,4 @@ app.get("*", (req, res) => {
 const port = process.env.PORT || 5000;
 app.listen(port);
 
-console.log(`Password generator listening on ${port}`);
+console.log(`Backend listening on ${port}`);
