@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Divider } from "@blueprintjs/core";
+import { Divider, Button } from "@blueprintjs/core";
+import { withRouter, Link } from "react-router-dom";
 
 class Tracks extends Component {
   render() {
@@ -68,6 +69,15 @@ class Tracks extends Component {
                 {track.album.name}
               </a>
             </div>
+            <div className="ellipsis-one-line">
+              {/* <Button
+                text="More"
+                onClick={() =>
+                  this.props.history.push("/tracks?id=" + track.id)
+                }
+              /> */}
+              <Link to={"/tracks?id=" + track.id}>More...</Link>
+            </div>
           </div>
           <Divider />
         </div>
@@ -76,4 +86,4 @@ class Tracks extends Component {
   }
 }
 
-export default Tracks;
+export default withRouter(Tracks);

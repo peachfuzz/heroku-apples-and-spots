@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Tabs, Tab, InputGroup, NonIdealState } from "@blueprintjs/core";
+import { Tabs, Tab, InputGroup, NonIdealState, H1 } from "@blueprintjs/core";
 import Albums from "./Results/Albums";
 import Artists from "./Results/Artists";
 import Playlists from "./Results/Playlists";
+import { IoIosMusicalNotes } from "react-icons/io";
 import Tracks from "./Results/Tracks";
 class Search extends Component {
   constructor(props) {
@@ -36,14 +37,12 @@ class Search extends Component {
       fetch("/api/spotify/search?q=" + q)
         .then(res => res.json())
         .then(results =>
-          this.setState({ results: results }, () =>
-            this.setState({
-              albums: results.albums.items,
-              artists: results.artists.items,
-              playlists: results.playlists.items,
-              tracks: results.tracks.items
-            })
-          )
+          this.setState({
+            albums: results.albums.items,
+            artists: results.artists.items,
+            playlists: results.playlists.items,
+            tracks: results.tracks.items
+          })
         )
         .catch(error => {
           console.log("ERROR!");
@@ -74,6 +73,14 @@ class Search extends Component {
   render() {
     return (
       <div className="search">
+        <H1>Stream links</H1>
+        <IoIosMusicalNotes alt="Music note" className="icon-music" size={50} />
+        <p>
+          Have you ever wanted to send a song to someone but weren't sure if
+          they had apple music or spotify? This should give you the ability to
+          create links for both apple music and spotify.
+        </p>
+        <br />
         <p>
           You can now search by simply typing{" "}
           <span aria-label="fire" role="img">
