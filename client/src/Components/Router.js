@@ -12,10 +12,6 @@ class Content extends Component {
         <H2>Personal Projects</H2>
         <Link to="/">Search</Link>
         <br />
-        <Link to="/tracks?id=0dbTQYW3Ad1FTzIA9t90E8">
-          Apple Music and Spotify Link Generator
-        </Link>
-        <br />
         <br />
         <Divider />
         <Switch>
