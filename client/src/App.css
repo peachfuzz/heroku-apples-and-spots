@@ -308,3 +308,17 @@ tr:nth-child(even) {
 .more:active {
   background-color: #ffefa9;
 }
+
+.w-85 {
+  width: 85%;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.just-center-more {
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+}
