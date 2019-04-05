@@ -67,7 +67,7 @@ app.get("/api/spotify/tracks", function(req, res) {
 app.get("/api/spotify/album", function(req, res) {
   console.log(req.query.id);
   var options = {
-    url: "https://api.spotify.com/v1/albums/" + req.query.id + "/tracks",
+    url: "https://api.spotify.com/v1/albums/" + req.query.id,
     headers: {
       Authorization: "Bearer " + token
     },
