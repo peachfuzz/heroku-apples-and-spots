@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Divider, Icon } from "@blueprintjs/core";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Albums extends Component {
   render() {

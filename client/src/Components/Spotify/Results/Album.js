@@ -91,7 +91,8 @@ class Album extends Component {
                       </span>
                     </div>
                   </div>
-                  {/* <Divider className="bp3-vertical" /> */}
+                  {/* the divider is inconsistent it it's sizing...
+                <Divider className="bp3-vertical" /> */}
                 </div>
               );
             })

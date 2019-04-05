@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Divider, Button } from "@blueprintjs/core";
+import { Divider } from "@blueprintjs/core";
 import { withRouter, Link } from "react-router-dom";
 
 class Tracks extends Component {
