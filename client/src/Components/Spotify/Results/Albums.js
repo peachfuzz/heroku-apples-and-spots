@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Divider, Icon } from "@blueprintjs/core";
+import { withRouter, Link } from "react-router-dom";
 
 class Albums extends Component {
   render() {
@@ -78,6 +79,9 @@ class Albums extends Component {
               >
                 {album.name}
               </a>
+            </div>
+            <div className="ellipsis-one-line">
+              <Link to={"/album?id=" + album.id}>More...</Link>
             </div>
           </div>
           <Divider />

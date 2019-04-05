@@ -5,6 +5,7 @@ import { withRouter, Link } from "react-router-dom";
 class Tracks extends Component {
   render() {
     var counter = 0;
+    console.log(this.props.tracks);
     return this.props.tracks.map(track => {
       counter++;
       // var artists = track.artists[0...n]; // if we ever want to do multiple artists
@@ -70,13 +71,7 @@ class Tracks extends Component {
               </a>
             </div>
             <div className="ellipsis-one-line">
-              {/* <Button
-                text="More"
-                onClick={() =>
-                  this.props.history.push("/tracks?id=" + track.id)
-                }
-              /> */}
-              <Link to={"/tracks?id=" + track.id}>More...</Link>
+              <Link to={"/track?id=" + track.id}>More...</Link>
             </div>
           </div>
           <Divider />

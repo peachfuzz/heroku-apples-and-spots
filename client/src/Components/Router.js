@@ -4,6 +4,7 @@ import "../App.css";
 import { H2, Divider } from "@blueprintjs/core";
 import Search from "./Spotify/Search";
 import Track from "./Spotify/Results/Track";
+import Album from "./Spotify/Results/Album";
 
 class Content extends Component {
   render() {
@@ -16,7 +17,8 @@ class Content extends Component {
         <Divider />
         <Switch>
           <Route exact path={"/"} component={Search} />
-          <Route path={"/tracks"} component={Track} />
+          <Route path={"/track"} component={Track} />
+          <Route path={"/album"} component={Album} />
         </Switch>
       </div>
     );
