@@ -78,6 +78,20 @@ app.get("/api/spotify/album", function(req, res) {
   });
 });
 
+app.get("/api/spotify/playlist", function(req, res) {
+  console.log("Playlist: " + req.query.id);
+  var options = {
+    url: "https://api.spotify.com/v1/playlists/" + req.query.id,
+    headers: {
+      Authorization: "Bearer " + token
+    },
+    json: true
+  };
+  request.get(options, (error, response, body) => {
+    res.json(body);
+  });
+});
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get("*", (req, res) => {

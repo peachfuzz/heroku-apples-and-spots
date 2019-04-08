@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Divider, Icon } from "@blueprintjs/core";
+import { Link } from "react-router-dom";
 class Playlists extends Component {
   render() {
     var counter = 0;
@@ -45,7 +46,11 @@ class Playlists extends Component {
                 </span>
               </a>
             </div>
+            <div className="ellipsis-one-line">
+              <Link to={"/playlist?id=" + playlist.id}>More...</Link>
+            </div>
           </div>
+
           <Divider />
         </div>
       );
