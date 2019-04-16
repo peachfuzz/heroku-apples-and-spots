@@ -1,8 +1,6 @@
-# Rando
+#Apples and Spots
 
-A password generator built with React and Express.
-
-This is a minimal demo of using Create React App to bootstrap a React project, connect the React app to an Express backend, and deploy the whole thing to Heroku.
+This project allows users to search for songs using the Spotify API and doesn't require login.
 
 Read the blog post: [Create React App with Express in
 Production](https://daveceddia.com/create-react-app-express-production/)
