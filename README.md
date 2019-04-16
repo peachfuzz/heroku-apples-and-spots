@@ -1,4 +1,4 @@
-#Apples and Spots
+# Apples and Spots
 
 This project allows users to search for songs using the Spotify API and doesn't require login.
 
